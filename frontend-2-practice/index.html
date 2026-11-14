@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Выбор даты и времени</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="page-header">
+        <div class="brand-block">
+          <div class="brand-mark">B</div>
+          <div class="brand-text">
+            <span class="brand-name">Barber House</span>
+            <span class="brand-subtitle">Студия мужской красоты</span>
+          </div>
+        </div>
+        <button class="header-button" type="button">Назад</button>
+      </header>
+
+      <main class="booking-page">
+        <aside class="booking-summary">
+          <p class="summary-label">Запись</p>
+          <h1>Выбор даты и времени</h1>
+
+          <div class="summary-card">
+            <div class="service-row">
+              <span class="service-name">Классическая стрижка</span>
+              <span class="service-price">2 200 ₽</span>
+            </div>
+            <div class="service-meta">
+              <span>45 минут</span>
+              <span>Барбер</span>
+            </div>
+          </div>
+
+          <div class="summary-list">
+            <div class="summary-item">
+              <span class="summary-name">Мастер</span>
+              <span class="summary-value">Александр</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-name">Дата</span>
+              <span class="summary-value" id="summary-date">—</span>
+            </div>
+            <div class="summary-item">
+              <span class="summary-name">Время</span>
+              <span class="summary-value" id="summary-time">Не выбрано</span>
+            </div>
+          </div>
+        </aside>
+
+        <section class="booking-panel" aria-label="Выбор даты и времени">
+          <div class="panel-top">
+            <div>
+              <p class="panel-label">Календарь</p>
+              <h2>Выберите дату</h2>
+            </div>
+            <div class="month-switch" aria-label="Навигация по месяцам">
+              <button type="button" class="month-arrow" data-month-shift="-1" aria-label="Предыдущий месяц">‹</button>
+              <span class="month-name" id="month-name" aria-live="polite"></span>
+              <button type="button" class="month-arrow" data-month-shift="1" aria-label="Следующий месяц">›</button>
+            </div>
+          </div>
+
+          <div class="calendar" aria-label="Календарь записи">
+            <div class="weekdays" aria-hidden="true">
+              <span>Пн</span>
+              <span>Вт</span>
+              <span>Ср</span>
+              <span>Чт</span>
+              <span>Пт</span>
+              <span>Сб</span>
+              <span>Вс</span>
+            </div>
+            <div class="dates-grid" id="dates-grid" aria-label="Дни месяца"></div>
+          </div>
+
+          <div class="slots-block">
+            <div class="slots-header">
+              <p class="panel-label">Свободное время</p>
+              <span class="slots-note" id="slots-note" aria-live="polite"></span>
+            </div>
+            <div class="slots-grid" id="slots-grid" aria-label="Слоты времени"></div>
+          </div>
+
+          <footer class="booking-actions">
+            <p class="booking-selection" id="booking-selection" aria-live="polite"></p>
+            <div class="booking-buttons">
+              <button type="button" class="secondary-button" id="reset-selection">Сбросить время</button>
+              <button type="button" class="primary-button" id="continue-button" disabled>Продолжить</button>
+            </div>
+          </footer>
+        </section>
+      </main>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
