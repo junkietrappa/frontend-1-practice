@@ -1,0 +1,440 @@
+:root {
+  --bg: #f4efe9;
+  --panel: #fffaf5;
+  --panel-strong: #f1e7dd;
+  --card: #f9f3ee;
+  --border: #e1d2bf;
+  --text: #1c1714;
+  --muted: #7d6c5e;
+  --accent: #c88142;
+  --accent-dark: #996130;
+  --accent-soft: #f3d5b1;
+  --shadow: rgba(46, 31, 20, 0.12);
+  --slot-occupied: #f5efe9;
+  --slot-occupied-text: #b19a88;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #efe6dc 0%, #f5f0eb 40%, #f6f0ea 100%);
+  color: var(--text);
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.page-shell {
+  width: min(1220px, calc(100% - 48px));
+  margin: 48px auto;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(160, 122, 86, 0.18);
+  border-radius: 28px;
+  box-shadow: 0 22px 50px rgba(60, 38, 20, 0.1);
+  backdrop-filter: blur(8px);
+}
+
+.page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 32px 18px;
+  border-bottom: 1px solid rgba(148, 117, 88, 0.18);
+}
+
+.brand-block {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--accent) 0%, #d99d5d 100%);
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.4rem;
+  box-shadow: 0 10px 18px rgba(186, 112, 54, 0.3);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.brand-name {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.brand-subtitle {
+  font-size: 0.73rem;
+  color: var(--muted);
+}
+
+.header-button,
+.secondary-button,
+.primary-button,
+.month-arrow,
+.date-day,
+.slot {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.header-button,
+.secondary-button {
+  background: #fff;
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-weight: 600;
+}
+
+.header-button:hover,
+.secondary-button:hover,
+.month-arrow:hover,
+.date-day:hover,
+.slot:hover,
+.primary-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(63, 46, 35, 0.09);
+}
+
+.booking-page {
+  display: flex;
+  min-height: 800px;
+}
+
+.booking-summary {
+  width: 360px;
+  padding: 34px 32px 28px;
+  background: rgba(250, 244, 239, 0.95);
+  border-right: 1px solid rgba(148, 117, 88, 0.18);
+}
+
+.summary-label,
+.panel-label {
+  margin: 0 0 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.booking-summary h1 {
+  margin: 0 0 22px;
+  font-size: clamp(2.2rem, 2vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.05em;
+}
+
+.summary-card {
+  padding: 18px 18px 16px;
+  background: linear-gradient(180deg, #f6eae0 0%, #f3dfcd 100%);
+  border: 1px solid rgba(168, 122, 88, 0.22);
+  border-radius: 18px;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25);
+}
+
+.service-row,
+.service-meta,
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-row {
+  gap: 18px;
+  margin-bottom: 10px;
+}
+
+.service-name {
+  font-size: 1.03rem;
+  font-weight: 600;
+}
+
+.service-price {
+  font-weight: 700;
+}
+
+.service-meta {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.summary-list {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(146, 109, 80, 0.15);
+}
+
+.summary-item {
+  padding: 12px 0;
+}
+
+.summary-name {
+  color: var(--muted);
+}
+
+.summary-value {
+  font-weight: 600;
+}
+
+.booking-panel {
+  flex: 1;
+  padding: 34px 28px 28px;
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.panel-top {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.panel-top h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 1.7vw, 2.4rem);
+  letter-spacing: -0.05em;
+}
+
+.month-switch {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 10px;
+}
+
+.month-arrow {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  color: var(--text);
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.month-name {
+  min-width: 112px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.calendar {
+  background: rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(160, 128, 96, 0.18);
+  border-radius: 22px;
+  padding: 18px 18px 12px;
+}
+
+.weekdays,
+.dates-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.weekdays {
+  margin-bottom: 12px;
+}
+
+.weekdays span {
+  display: block;
+  text-align: center;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 8px 0;
+}
+
+.date-day {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--text);
+  border-radius: 14px;
+  min-height: 52px;
+  font-weight: 600;
+  font-size: 1.02rem;
+}
+
+.date-day.muted {
+  color: #bca899;
+}
+
+.date-day.active {
+  border-color: rgba(200, 129, 66, 0.4);
+  background: rgba(243, 213, 177, 0.38);
+}
+
+.date-day.selected {
+  background: linear-gradient(135deg, var(--accent) 0%, #d08848 100%);
+  color: white;
+  box-shadow: 0 12px 20px rgba(192, 117, 62, 0.28);
+}
+
+.date-day:hover {
+  background: rgba(240, 224, 210, 0.8);
+}
+
+.date-day.selected:hover {
+  background: linear-gradient(135deg, #be7636 0%, #d08848 100%);
+}
+
+.slots-block {
+  margin-top: 28px;
+}
+
+.slots-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.slots-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.slots-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.slot {
+  min-width: 100px;
+  padding: 12px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.slot-available {
+  background: linear-gradient(180deg, #fffdfb 0%, #fff5eb 100%);
+}
+
+.slot-available:hover {
+  border-color: rgba(200, 129, 66, 0.55);
+  background: rgba(244, 216, 189, 0.6);
+}
+
+.slot-occupied {
+  background: var(--slot-occupied);
+  color: var(--slot-occupied-text);
+  border-color: #e8d9ca;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+
+.slot-selected {
+  background: linear-gradient(135deg, var(--accent) 0%, #d88d4f 100%);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 12px 18px rgba(196, 122, 56, 0.22);
+}
+
+.booking-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 34px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(146, 109, 80, 0.15);
+}
+
+.primary-button {
+  border: none;
+  background: linear-gradient(135deg, var(--accent) 0%, #d98b48 100%);
+  color: #fff;
+  border-radius: 12px;
+  padding: 14px 26px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  box-shadow: 0 12px 20px rgba(193, 118, 67, 0.22);
+}
+
+.primary-button:hover {
+  background: linear-gradient(135deg, var(--accent-dark) 0%, #c97b42 100%);
+}
+
+@media (max-width: 980px) {
+  .booking-page {
+    flex-direction: column;
+  }
+
+  .booking-summary {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(148, 117, 88, 0.18);
+  }
+}
+
+@media (max-width: 620px) {
+  .page-shell {
+    width: min(100% - 20px, 620px);
+    margin: 20px auto;
+  }
+
+  .page-header,
+  .booking-summary,
+  .booking-panel {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .page-header {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .month-switch {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .slots-grid {
+    gap: 8px;
+  }
+
+  .slot {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 0;
+  }
+
+  .booking-actions {
+    flex-direction: column-reverse;
+  }
+
+  .secondary-button,
+  .primary-button {
+    width: 100%;
+  }
+}
